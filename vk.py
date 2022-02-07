@@ -3,8 +3,8 @@ import json
 punct = ['.', ',', '!', '?', ')', '(']
 
 
-def take_from_html():
-    with open('chat.html', 'r', encoding='windows-1251') as f:
+def take_from_html(name):
+    with open(name, 'r', encoding='windows-1251') as f:
         text = f.read()
     f.close()
     data_string = ''
@@ -23,9 +23,9 @@ def take_from_html():
     return data_string
 
 
-def take_from_json():
+def take_from_json(name):
     data_string = ''
-    with open('dialog.json', 'r', encoding='utf-8-sig') as f:
+    with open(name, 'r', encoding='utf-8-sig') as f:
         data = json.load(f)
     f.close()
     for msg in data['data']:
